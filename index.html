@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auto Escola Vitória | Guarulhos - SP</title>
+<meta name="description" content="Auto Escola Vitória em Guarulhos: mais de 18 anos de mercado, carros novos, aulas para adultos e aulas particulares. Nota 4,3 no Google.">
+<style>
+  :root{
+    --azul:#0b2a5b; --azul2:#143d82; --amarelo:#ffc21a; --bg:#f6f8fc; --texto:#1b2433; --cinza:#5b6578; --branco:#fff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--texto);background:var(--bg);line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  header{position:sticky;top:0;z-index:10;background:var(--azul);color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-weight:800;font-size:1.15rem;letter-spacing:.3px}
+  .logo span{color:var(--amarelo)}
+  nav{display:flex;gap:22px;font-size:.95rem}
+  nav a:hover{color:var(--amarelo)}
+  @media(max-width:700px){nav{display:none}}
+
+  .btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:700;transition:.2s;border:2px solid transparent}
+  .btn-y{background:var(--amarelo);color:var(--azul)}
+  .btn-y:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,194,26,.4)}
+  .btn-o{border-color:#fff;color:#fff}
+  .btn-o:hover{background:#fff;color:var(--azul)}
+
+  .hero{background:linear-gradient(135deg,var(--azul) 0%,var(--azul2) 100%);color:#fff;padding:80px 0 90px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:rgba(255,194,26,.12)}
+  .hero .wrap{position:relative;z-index:1}
+  .tag{display:inline-block;background:rgba(255,255,255,.14);padding:6px 14px;border-radius:999px;font-size:.85rem;margin-bottom:18px}
+  .hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.15;max-width:700px;margin-bottom:16px}
+  .hero h1 em{font-style:normal;color:var(--amarelo)}
+  .hero p{max-width:560px;font-size:1.1rem;opacity:.92;margin-bottom:28px}
+  .hero .acoes{display:flex;gap:14px;flex-wrap:wrap}
+  .nota{margin-top:34px;display:flex;align-items:center;gap:12px;font-size:.95rem}
+  .nota b{font-size:1.6rem;color:var(--amarelo)}
+
+  .stars{--p:86%;display:inline-block;font-size:1.2rem;letter-spacing:2px;line-height:1;
+    background:linear-gradient(90deg,var(--amarelo) var(--p),rgba(255,255,255,.3) var(--p));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .stars.dark{background:linear-gradient(90deg,#f5a800 var(--p),#d5dae4 var(--p));-webkit-background-clip:text;background-clip:text}
+  .stars.full{--p:100%}
+
+  section{padding:72px 0}
+  h2{font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--azul);margin-bottom:8px}
+  .sub{color:var(--cinza);margin-bottom:36px;max-width:620px}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .card{background:#fff;border-radius:18px;padding:28px;box-shadow:0 6px 24px rgba(11,42,91,.08);border-top:4px solid var(--amarelo)}
+  .card .ico{font-size:1.8rem;margin-bottom:10px}
+  .card h3{color:var(--azul);margin-bottom:6px}
+  .card p{color:var(--cinza);font-size:.97rem}
+
+  .sobre{background:#fff}
+  .sobre .grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  @media(max-width:800px){.sobre .grid{grid-template-columns:1fr}}
+  .numeros{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .num{background:var(--bg);border-radius:16px;padding:22px;text-align:center}
+  .num b{display:block;font-size:2rem;color:var(--azul)}
+  .num span{font-size:.9rem;color:var(--cinza)}
+
+  .resumo{display:flex;align-items:center;gap:20px;background:#fff;border-radius:18px;padding:24px 28px;box-shadow:0 6px 24px rgba(11,42,91,.08);margin-bottom:24px;flex-wrap:wrap}
+  .resumo .big{font-size:3rem;font-weight:800;color:var(--azul);line-height:1}
+  .resumo small{color:var(--cinza)}
+  .avals{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .aval{background:#fff;border-radius:18px;padding:26px;box-shadow:0 6px 24px rgba(11,42,91,.08);position:relative}
+  .aval::before{content:"“";position:absolute;top:6px;right:20px;font-size:4.5rem;color:var(--amarelo);opacity:.5;font-family:Georgia,serif}
+  .aval p{font-size:1.02rem;margin:10px 0 14px}
+  .aval footer{font-size:.85rem;color:var(--cinza)}
+
+  .contato{background:var(--azul);color:#fff}
+  .contato h2{color:#fff}
+  .contato .sub{color:rgba(255,255,255,.8)}
+  .cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .citem{background:rgba(255,255,255,.08);border-radius:16px;padding:22px}
+  .citem small{display:block;color:var(--amarelo);font-weight:700;text-transform:uppercase;letter-spacing:.6px;font-size:.75rem;margin-bottom:6px}
+  .citem a:hover{text-decoration:underline}
+  .cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+
+  footer.rodape{background:#071d42;color:rgba(255,255,255,.7);text-align:center;padding:22px;font-size:.85rem}
+
+  .zap{position:fixed;right:18px;bottom:18px;background:#25d366;color:#fff;border-radius:999px;padding:14px 20px;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:20}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#inicio" class="logo">Auto Escola <span>Vitória</span></a>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero" id="inicio">
+  <div class="wrap">
+    <span class="tag">📍 Guarulhos - SP</span>
+    <h1>Sua habilitação com <em>respeito, segurança</em> e tranquilidade</h1>
+    <p>Há mais de 18 anos tratando nossos clientes com respeito e dignidade. Carros novos e acompanhamento em todas as etapas.</p>
+    <div class="acoes">
+      <a class="btn btn-y" href="https://wa.me/5511947792639" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a class="btn btn-o" href="tel:+5511947792639">Ligar agora</a>
+    </div>
+    <div class="nota">
+      <b>4,3</b>
+      <div>
+        <span class="stars" style="--p:86%">★★★★★</span><br>
+        <span>51 avaliações no Google</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="servicos">
+  <div class="wrap">
+    <h2>Nossos serviços</h2>
+    <p class="sub">Um processo mais simples, com acompanhamento em todas as etapas.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="ico">🧑‍💼</div>
+        <h3>Aulas para adultos</h3>
+        <p>Formação completa para quem quer tirar a primeira habilitação com praticidade e confiança.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🚗</div>
+        <h3>Aulas particulares</h3>
+        <p>Atenção individual com instrutores experientes para você evoluir no seu ritmo.</p>
+      </div>
+      <div class="card">
+        <div class="ico">📚</div>
+        <h3>Aulas teóricas</h3>
+        <p>Conteúdo teórico para você se preparar com segurança para a prova.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="wrap grid">
+    <div>
+      <h2>Quem somos</h2>
+      <p class="sub" style="margin-bottom:16px">A Auto Escola Vitória está no mercado em Guarulhos há mais de 18 anos. Tratamos nossos clientes com respeito e dignidade e contamos com carros novos para suas aulas práticas.</p>
+      <p style="color:var(--cinza)">Com um processo mais simples e acompanhamento em todas as etapas, você faz tudo com mais praticidade, segurança e tranquilidade.</p>
+    </div>
+    <div class="numeros">
+      <div class="num"><b>18+</b><span>anos de mercado</span></div>
+      <div class="num"><b>4,3</b><span>nota no Google</span></div>
+      <div class="num"><b>51</b><span>avaliações</span></div>
+      <div class="num"><b>🚘</b><span>carros novos</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="avaliacoes">
+  <div class="wrap">
+    <h2>O que dizem nossos alunos</h2>
+    <p class="sub">Avaliações reais publicadas no Google.</p>
+
+    <div class="resumo">
+      <div class="big">4,3</div>
+      <div>
+        <span class="stars dark" style="--p:86%">★★★★★</span><br>
+        <small>Baseado em 51 avaliações no Google</small>
+      </div>
+    </div>
+
+    <div class="avals">
+      <article class="aval">
+        <span class="stars dark full">★★★★★</span>
+        <p>“Eu super recomendo, todos muito bons profissionais.”</p>
+        <footer>Avaliação no Google</footer>
+      </article>
+      <article class="aval">
+        <span class="stars dark full">★★★★★</span>
+        <p>“Gostaria de agradecer ao instrutor Roberto pelas aulas, e a Beatris da recepção.”</p>
+        <footer>Avaliação no Google</footer>
+      </article>
+      <article class="aval">
+        <span class="stars dark full">★★★★★</span>
+        <p>“Consegui passar na prova prática de primeira!”</p>
+        <footer>Avaliação no Google</footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="wrap">
+    <h2>Fale com a gente</h2>
+    <p class="sub">Venha nos visitar ou chame no WhatsApp.</p>
+    <div class="cgrid">
+      <div class="citem">
+        <small>Endereço</small>
+        Estr. Pres. Juscelino K. de Oliveira, 2889<br>Jardim Albertina, Guarulhos - SP<br>CEP 07272-345
+      </div>
+      <div class="citem">
+        <small>Telefone / WhatsApp</small>
+        <a href="tel:+5511947792639">(11) 94779-2639</a>
+      </div>
+      <div class="citem">
+        <small>Redes sociais</small>
+        <a href="https://www.facebook.com/autoescolavitoriaguarulhos/?locale=pt_BR" target="_blank" rel="noopener">Facebook</a> ·
+        <a href="https://www.instagram.com/popular/auto-escola-vitoria-guarulhos/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="cta">
+      <a class="btn btn-y" href="https://wa.me/5511947792639" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <a class="btn btn-o" href="https://www.google.com/maps/search/?api=1&query=Auto+Escola+Vit%C3%B3ria+Estr.+Pres.+Juscelino+K.+de+Oliveira+2889+Guarulhos" target="_blank" rel="noopener">Ver rota no mapa</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="rodape">© Auto Escola Vitória · Guarulhos - SP</footer>
+
+<a class="zap" href="https://wa.me/5511947792639" target="_blank" rel="noopener">💬 WhatsApp</a>
+
+</body>
+</html>
